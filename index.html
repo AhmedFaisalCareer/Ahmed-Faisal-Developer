@@ -1,0 +1,1733 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahmed Faisal | Developer Portfolio</title>
+
+    <meta
+        name="description"
+        content="Ahmed Faisal — Python, Web and AI Developer Portfolio."
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f19;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #9ca3af;
+        }
+
+        .highlight {
+            color: #38bdf8;
+        }
+
+        /* NAVBAR */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* HOME */
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(56,189,248,0.12),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 20% 80%,
+                    rgba(99,102,241,0.10),
+                    transparent 30%
+                ),
+                #0b0f19;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-small {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            color: #cbd5e1;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #9ca3af;
+            max-width: 620px;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid #38bdf8;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #061018;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(56,189,248,0.25);
+        }
+
+        .btn-outline {
+            color: #38bdf8;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: #38bdf8;
+            color: #061018;
+        }
+
+        /* TERMINAL */
+
+        .developer-card {
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,0.08),
+                rgba(255,255,255,0.02)
+            );
+
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+        }
+
+        .terminal-top {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 25px;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #64748b;
+        }
+
+        .code {
+            font-family: Consolas, monospace;
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .code .blue {
+            color: #38bdf8;
+        }
+
+        .code .green {
+            color: #4ade80;
+        }
+
+        .code .purple {
+            color: #c084fc;
+        }
+
+        /* ABOUT */
+
+        #about {
+            background: #0e1421;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #9ca3af;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .about-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .about-box {
+            padding: 25px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+        }
+
+        .about-box h4 {
+            color: #38bdf8;
+            font-size: 25px;
+        }
+
+        .about-box p {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            padding: 25px;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .skill-head {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .skill-head span:last-child {
+            color: #38bdf8;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #1f2937;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #38bdf8;
+            width: 0;
+            border-radius: 20px;
+            transition: width 1.5s ease;
+        }
+
+        /* PROJECTS */
+
+        #projects {
+            background: #0e1421;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+        }
+
+        .project-image {
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(56,189,248,0.15),
+                    rgba(99,102,241,0.15)
+                );
+
+            font-size: 60px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #9ca3af;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            padding: 5px 9px;
+            background: #1e293b;
+            color: #7dd3fc;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        /* SERVICES */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 30px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #38bdf8;
+        }
+
+        .service-icon {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .service-card p {
+            color: #9ca3af;
+            font-size: 15px;
+        }
+
+        /* CONTACT */
+
+        #contact {
+            background: #0e1421;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #9ca3af;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #1f2937;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #38bdf8;
+            margin-bottom: 4px;
+        }
+
+        .contact-item span {
+            color: #d1d5db;
+        }
+
+        .contact-form {
+            background: #111827;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1f2937;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #d1d5db;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            background: #0b0f19;
+            color: white;
+            border: 1px solid #374151;
+            border-radius: 7px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .form-status {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        .form-status.success {
+            display: block;
+            background: rgba(34,197,94,0.12);
+            color: #4ade80;
+            border: 1px solid rgba(34,197,94,0.25);
+        }
+
+        .form-status.error {
+            display: block;
+            background: rgba(239,68,68,0.12);
+            color: #f87171;
+            border: 1px solid rgba(239,68,68,0.25);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #1f2937;
+            color: #9ca3af;
+        }
+
+        footer span {
+            color: #38bdf8;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                background: #0b0f19;
+                border-bottom: 1px solid #1f2937;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 15px 5%;
+                border-bottom: 1px solid #1f2937;
+            }
+
+            .hero,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .about-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .developer-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <a href="#home" class="logo">
+                    Ahmed<span>.</span>
+                </a>
+
+                <div class="menu-btn" id="menuBtn">
+                    ☰
+                </div>
+
+                <ul class="nav-links" id="navLinks">
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#skills">Skills</a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HOME -->
+
+    <section id="home">
+
+        <div class="container">
+
+            <div class="hero">
+
+                <div>
+
+                    <div class="hero-small">
+                        HELLO, I'M
+                    </div>
+
+                    <h1>
+                        Ahmed <span class="highlight">Faisal</span>
+                    </h1>
+
+                    <h2>
+                        Python & Web Developer
+                    </h2>
+
+                    <p>
+                        I build practical web applications, business tools,
+                        automation projects and AI-powered applications using
+                        Python, Streamlit, HTML, CSS and JavaScript.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a
+                            href="#projects"
+                            class="btn btn-primary"
+                        >
+                            View My Projects
+                        </a>
+
+                        <a
+                            href="#contact"
+                            class="btn btn-outline"
+                        >
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="developer-card">
+
+                    <div class="terminal-top">
+
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+
+                    </div>
+
+                    <div class="code">
+
+                        <p>
+                            <span class="blue">class</span>
+                            <span class="purple">Developer</span>:
+                        </p>
+
+                        <br>
+
+                        <p>
+                            &nbsp;&nbsp;name =
+                            <span class="green">
+                                "Ahmed Faisal"
+                            </span>
+                        </p>
+
+                        <p>
+                            &nbsp;&nbsp;role =
+                            <span class="green">
+                                "Developer"
+                            </span>
+                        </p>
+
+                        <p>
+                            &nbsp;&nbsp;skills =
+                            <span class="green">
+                                ["Python", "HTML",
+                            </span>
+                        </p>
+
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="green">
+                                "CSS", "JavaScript",
+                            </span>
+                        </p>
+
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <span class="green">
+                                "Streamlit", "AI"]
+                            </span>
+                        </p>
+
+                        <br>
+
+                        <p>
+                            <span class="blue">def</span>
+                            <span class="purple">build</span>():
+                        </p>
+
+                        <p>
+                            &nbsp;&nbsp;
+                            <span class="blue">return</span>
+                            <span class="green">
+                                "Useful Applications"
+                            </span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    About <span class="highlight">Me</span>
+                </h2>
+
+                <p>
+                    A developer focused on learning, building and creating.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <h3>
+                        Building Ideas Into Real Applications
+                    </h3>
+
+                    <p>
+                        I'm Ahmed Faisal, a student and developer interested
+                        in Python, web development, automation and artificial
+                        intelligence.
+                    </p>
+
+                    <p>
+                        I enjoy turning ideas into working applications that
+                        solve practical problems for students, businesses and
+                        everyday users.
+                    </p>
+
+                    <p>
+                        My projects include business dashboards, study tools,
+                        order management systems and AI-powered applications.
+                    </p>
+
+                </div>
+
+
+                <div class="about-boxes">
+
+                    <div class="about-box">
+                        <h4>3+</h4>
+                        <p>Major Projects</p>
+                    </div>
+
+                    <div class="about-box">
+                        <h4>Python</h4>
+                        <p>Core Development</p>
+                    </div>
+
+                    <div class="about-box">
+                        <h4>Web</h4>
+                        <p>HTML, CSS & JavaScript</p>
+                    </div>
+
+                    <div class="about-box">
+                        <h4>AI</h4>
+                        <p>AI Application Development</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    My <span class="highlight">Skills</span>
+                </h2>
+
+                <p>
+                    Technologies I use to build my projects.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+
+                    <div class="skill-head">
+                        <span>Python</span>
+                        <span>90%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-progress"
+                            data-width="90%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-head">
+                        <span>HTML</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-progress"
+                            data-width="80%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-head">
+                        <span>CSS</span>
+                        <span>70%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-progress"
+                            data-width="70%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-head">
+                        <span>JavaScript</span>
+                        <span>70%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-progress"
+                            data-width="70%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-head">
+                        <span>Streamlit</span>
+                        <span>90%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-progress"
+                            data-width="90%"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <div class="skill-head">
+                        <span>AI Applications</span>
+                        <span>85%</span>
+                    </div>
+
+                    <div class="skill-bar">
+                        <div
+                            class="skill-progress"
+                            data-width="85%"
+                        ></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Featured <span class="highlight">Projects</span>
+                </h2>
+
+                <p>
+                    Some applications I've built.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+
+                <!-- BIZMANAGER -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        📊
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>
+                            BizManager
+                        </h3>
+
+                        <p>
+                            A business management dashboard designed to help
+                            small businesses manage important information
+                            and operations from one place.
+                        </p>
+
+                        <div class="tags">
+
+                            <span class="tag">
+                                Python
+                            </span>
+
+                            <span class="tag">
+                                Streamlit
+                            </span>
+
+                            <span class="tag">
+                                Dashboard
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="btn btn-outline"
+                        >
+                            View Project
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AHMED DEV STUDIO -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        💻
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>
+                            Ahmed Dev Studio
+                        </h3>
+
+                        <p>
+                            A service and project-order platform where clients
+                            can submit requests and track project progress.
+                        </p>
+
+                        <div class="tags">
+
+                            <span class="tag">
+                                Python
+                            </span>
+
+                            <span class="tag">
+                                Streamlit
+                            </span>
+
+                            <span class="tag">
+                                SQLite
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="https://ahmeddevstudio-nfarp3feq6mc7qewynnahg.streamlit.app/"
+                            target="_blank"
+                            class="btn btn-outline"
+                        >
+                            Live Demo
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI STUDY ASSISTANT -->
+
+                <div class="project-card">
+
+                    <div class="project-image">
+                        🤖
+                    </div>
+
+                    <div class="project-content">
+
+                        <h3>
+                            AI Study Assistant
+                        </h3>
+
+                        <p>
+                            An AI-powered study application that helps students
+                            generate summaries, quizzes, notes and learning
+                            resources.
+                        </p>
+
+                        <div class="tags">
+
+                            <span class="tag">
+                                Python
+                            </span>
+
+                            <span class="tag">
+                                AI
+                            </span>
+
+                            <span class="tag">
+                                Firebase
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="btn btn-outline"
+                        >
+                            View Project
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    My <span class="highlight">Services</span>
+                </h2>
+
+                <p>
+                    Things I can build and help with.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Website Development
+                    </h3>
+
+                    <p>
+                        Modern responsive websites using HTML, CSS and
+                        JavaScript.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🐍
+                    </div>
+
+                    <h3>
+                        Python Applications
+                    </h3>
+
+                    <p>
+                        Python applications, utilities, dashboards and
+                        practical business tools.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Business Dashboards
+                    </h3>
+
+                    <p>
+                        Custom dashboards for managing orders, customers,
+                        projects and business information.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        AI Applications
+                    </h3>
+
+                    <p>
+                        AI-powered applications that integrate useful AI
+                        features into real projects.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        Automation
+                    </h3>
+
+                    <p>
+                        Workflow automation and tools designed to reduce
+                        repetitive tasks.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🛠️
+                    </div>
+
+                    <h3>
+                        Custom Projects
+                    </h3>
+
+                    <p>
+                        Custom applications based on a client's specific
+                        requirements and ideas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Let's <span class="highlight">Connect</span>
+                </h2>
+
+                <p>
+                    Have an idea or project? Let's talk.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <!-- CONTACT INFORMATION -->
+
+                <div class="contact-info">
+
+                    <h3>
+                        Let's build something useful.
+                    </h3>
+
+                    <p>
+                        If you have a project idea, website requirement,
+                        dashboard idea or Python application, you can get
+                        in touch with me.
+                    </p>
+
+
+                    <div class="contact-item">
+
+                        <strong>
+                            Developer
+                        </strong>
+
+                        <span>
+                            Ahmed Faisal
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <strong>
+                            GitHub
+                        </strong>
+
+                        <span>
+                            github.com/AhmedFaisalCareer
+                        </span>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <strong>
+                            LinkedIn
+                        </strong>
+
+                        <span>
+                            Ahmed Faisal
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <!--
+                    IMPORTANT:
+
+                    Replace:
+
+                    YOUR_FORMSPREE_ENDPOINT
+
+                    with your real Formspree URL.
+
+                    Example:
+
+                    https://formspree.io/f/abcdwxyz
+                -->
+
+                <form
+                    class="contact-form"
+                    id="contactForm"
+                    action="https://formspree.io/f/xwlpvenq"
+                    method="POST"
+                >
+
+                    <!-- Email subject -->
+
+                    <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Portfolio Contact — Ahmed Faisal"
+                    >
+
+
+                    <!-- Name -->
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Message -->
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell me about your project..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="sendButton"
+                    >
+                        Send Message
+                    </button>
+
+
+                    <div
+                        class="form-status"
+                        id="formStatus"
+                    ></div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © <span id="year"></span>
+                Ahmed Faisal.
+                Built with HTML, CSS & JavaScript.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("active");
+
+                });
+
+            });
+
+
+        /* =========================
+           SKILL ANIMATION
+        ========================== */
+
+        const skillBars =
+            document.querySelectorAll(".skill-progress");
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            const width =
+                                entry.target.getAttribute(
+                                    "data-width"
+                                );
+
+                            entry.target.style.width =
+                                width;
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.5
+                }
+            );
+
+
+        skillBars.forEach(bar => {
+
+            observer.observe(bar);
+
+        });
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const formStatus =
+            document.getElementById("formStatus");
+
+        const sendButton =
+            document.getElementById("sendButton");
+
+
+        contactForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                /* Make sure Formspree URL was added */
+
+                if (
+                    contactForm.action.includes(
+                        "YOUR_FORMSPREE_ENDPOINT"
+                    )
+                ) {
+
+                    formStatus.className =
+                        "form-status error";
+
+                    formStatus.textContent =
+                        "Please connect the form to Formspree first.";
+
+                    return;
+
+                }
+
+
+                sendButton.disabled = true;
+
+                sendButton.textContent =
+                    "Sending...";
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            contactForm.action,
+                            {
+                                method: "POST",
+                                body: new FormData(contactForm),
+                                headers: {
+                                    "Accept":
+                                        "application/json"
+                                }
+                            }
+                        );
+
+
+                    if (response.ok) {
+
+                        formStatus.className =
+                            "form-status success";
+
+                        formStatus.textContent =
+                            "Message sent successfully! I'll get back to you soon.";
+
+                        contactForm.reset();
+
+                    } else {
+
+                        throw new Error(
+                            "Message could not be sent."
+                        );
+
+                    }
+
+                }
+
+                catch (error) {
+
+                    formStatus.className =
+                        "form-status error";
+
+                    formStatus.textContent =
+                        "Something went wrong. Please try again.";
+
+                }
+
+
+                sendButton.disabled = false;
+
+                sendButton.textContent =
+                    "Send Message";
+
+            }
+        );
+
+
+        /* =========================
+           CURRENT YEAR
+        ========================== */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>
+```
