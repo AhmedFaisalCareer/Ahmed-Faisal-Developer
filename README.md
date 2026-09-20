@@ -9,7 +9,7 @@ This website showcases my skills, projects, and services as a beginner developer
 ## 🌐 Portfolio
 
 **Live Website:**  
-Add your deployed portfolio link here.
+https://ahmedfaisalcareer.github.io/Ahmed-Faisal-Developer/#
 
 ---
 
@@ -85,7 +85,6 @@ A project-order and service platform where visitors can submit requests for deve
 
 **Live App:**  
 https://ahmeddevstudio-nfarp3feq6mc7qewynnahg.streamlit.app/
-
 ---
 
 ### 3. 🤖 AI Study Assistant
